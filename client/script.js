@@ -25,11 +25,6 @@ var draw = function (datasetName) {
     var features = svg.append("g")
         .attr("class", "features");
 
-    // Generate colors
-    var color = d3.scaleLinear()
-        .domain([1, 30, 50, 60, 70, 120, 200, 300])
-        .range(d3.schemeBlues[9]);
-
     /* Initialize tooltip */
     tip = d3.tip()
         .attr('class', 'd3-tip')
@@ -70,7 +65,10 @@ var draw = function (datasetName) {
     function ready(error, geodata) {
         if (error) console.log(error); //unknown error, check the console
 
-        console.log(datasets);
+        // Generate colors
+        var color = d3.scaleLinear()
+            .domain(Object.values(datasets[datasetName]))
+            .range(d3.schemeBlues[9]);
 
         //Create a path for each map feature in the data
         features.selectAll("path")
