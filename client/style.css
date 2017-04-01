@@ -8,6 +8,7 @@ html, body {
   padding: 0;
   font-family: 'Arial', sans-serif;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 path {
@@ -87,4 +88,9 @@ a:hover {
 #nav-button {
   width: 2vw;
   height: 2vw;
+}
+
+#map {
+  width: 80vw;
+  height: 100vh;
 }

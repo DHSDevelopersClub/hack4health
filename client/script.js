@@ -1,5 +1,5 @@
 /*
-Copyright me 
+Copyright me
 2017
 */
 
@@ -45,7 +45,11 @@ var draw = function (datasetName) {
     tip = d3.tip()
         .attr('class', 'd3-tip')
         .html(function (d) {
-            return ("<h1 class=\"tooltip\"> Rate: " + d.rate + "</h1>")
+            let minutes = d.rate / 60;
+            let seconds = minutes - 1;
+            seconds = seconds * 60;
+            minutes = Math.round(minutes);
+            return (`<h1 class="tooltip"> Time: ${minutes}:${seconds}</h1>`)
         });
 
     /* Invoke the tip in the context of your visualization */
@@ -83,7 +87,7 @@ var draw = function (datasetName) {
 
         // Generate colors
         var formattedValues = [];
-        
+
         Object.values(datasets[datasetName]).forEach(function (v){
             if(v != 0){
                 formattedValues.push(v);
