@@ -96,16 +96,22 @@ a:hover {
   margin: 8px 0 0 8px;
 }
 
-.dotr {
+.dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  display: inline-block;
+  margin-right: .5vw;
+}
+
+.r {
   background: #E91E63;
 }
 
-.dotb {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--app-primary-color);
+.b {
+  background: #2196F3;
+}
+
+span {
+  display: block;
 }
