@@ -45,7 +45,7 @@ d3.queue()
     .defer(d3.json, "zipcodes.geojson")
     .defer(d3.tsv, "response_time.tsv", function(d) { datasets['responseTime'][d.zip_code] = d.value; })
     .defer(d3.tsv, "dispach_time.tsv", function(d) { datasets['dispachTime'][d.zip_code] = d.value; })
-    .defer(d3.tsv, "hospitalized.tsv", function(d) { datasets['hospitalized'][d.zip_code] = d.value; })
+    .defer(d3.tsv, "percent_hospitalized.tsv", function(d) { datasets['hospitalized'][d.zip_code] = d.value; })
     .await(ready);
 
 
