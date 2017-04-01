@@ -15,7 +15,7 @@ var draw = function (datasetName) {
     //Map projection
     var projection = d3.geoMercator()
         .scale(65000)
-        .center([-122.74168747117493, 38.09263738233181]) //projection center
+        .center([-122.72168747117493, 38.09163738233181]) //projection center
         .translate([width / 2, height / 2]) //translate to center the map in view
 
     //Generate paths based on projection
