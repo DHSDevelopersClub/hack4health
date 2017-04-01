@@ -10,6 +10,8 @@
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js" integrity="sha384-Vy3MfZmjTg/GcpizhcEx559fjD9gffKNAtynCiyNez6ReeUbFto+LiajdfeFjnKa"
     crossorigin="anonymous"></script>
 
+    <script src="../node_modules/d3-tip/index.js"></script>
+
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
   <link rel="stylesheet" href="./style.css">
@@ -23,14 +25,14 @@
     <a href="#" class="w3-bar-item w3-button w3-hover-blue">Link 3</a>
   </div>
 
-  <div class="w3-sidebar w3-bar-block w3-red" style="width: 25%; margin-top: 38px;">
+  <div class="w3-sidebar w3-bar-block w3-blue" style="width: 15%; margin-top: 38px;">
     <form id="dataSelector">
       <div class="w3-bar-item w3-button">
-        <input type="radio" id="responseTime" name="dataset" value="responseTime" checked>
+        <input type="radio" id="responseTime" name="dataset" value="responseTime">
         <label for="responseTime">Response Time</label>
       </div>
       <div class="w3-bar-item w3-button">
-        <input type="radio" id="dispachTime" name="dataset" value="dispachTime">
+        <input type="radio" id="dispachTime" name="dataset" value="dispachTime" checked>
         <label for="dispachTime">Dispach Time</label>
       </div>
       <div class="w3-bar-item w3-button">
@@ -40,7 +42,7 @@
     </form>
   </div>
 
-  <svg style="margin-left: 25%; margin-top: 38px;" width="519" height="600"></svg>
+  <svg style="margin-left: 25%; margin-top: 15%;" width="519" height="600"></svg>
 
   <script src="./script.js"></script>
 </body>
