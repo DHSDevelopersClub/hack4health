@@ -82,16 +82,6 @@ var draw = function (datasetName) {
         if (error) console.log(error); //unknown error, check the console
 
         // Generate colors
-        var formattedValues = [];
-        
-        Object.values(datasets[datasetName]).forEach(function (v){
-            if(v != 0){
-                formattedValues.push(v);
-            }
-        })
-
-        console.log(Object.values(datasets[datasetName]).map(Number).sort());
-
         var color = d3.scaleLinear()
             .domain([0, d3.max(Object.values(datasets[datasetName]))/9])
             .range(d3.schemeBlues[9]);
