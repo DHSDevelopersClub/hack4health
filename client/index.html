@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
 
+  <title>Hack4Health</title>
+
   <script src="http://d3js.org/d3.v4.min.js" integrity="sha384-YZRyRT2VEKNS+6RNto8/JJAfItlwQEmGhzzflwRc2340NgFe6c64zUQF/JSzNq3O"
     crossorigin="anonymous"></script>
 
@@ -25,24 +27,28 @@
     <a href="#" class="item">Link 3</a>
   </div>
 
-  <div class="w3-sidebar w3-bar-block w3-blue" style="width: 15%; margin-top: 38px;">
-    <form id="dataSelector">
-      <div class="w3-bar-item w3-button">
-        <input type="radio" id="responseTime" name="dataset" value="responseTime">
-        <label for="responseTime">Response Time</label>
-      </div>
-      <div class="w3-bar-item w3-button">
-        <input type="radio" id="dispachTime" name="dataset" value="dispachTime" checked>
-        <label for="dispachTime">Dispach Time</label>
-      </div>
-      <div class="w3-bar-item w3-button">
-        <input type="radio" id="hospitalized" name="dataset" value="hospitalized">
-        <label for="hospitalized">Percent Hospitalized</label>
+  <div id="content">
+    <div id="sidebar">
+      <form id="dataSelector" action="index.html" method="post">
+        <div class="selector">
+          <input type="radio" id="responseTime" name="dataset" value="responseTime">
+          <label for="responseTime">Arrival Time</label>
+        </div>
+        <div class="selector">
+          <input type="radio" id="dispachTime" name="dataset" value="dispachTime" checked>
+          <label for="dispachTime">Dispach Time</label>
+        </div>
+        <div class="selector">
+          <input type="radio" id="hospitalized" name="dataset" value="hospitalized">
+          <label for="hospitalized">Percent Hospitalized</label>
+        </div>
       </div>
     </form>
+
+    <svg style="" width="519" height="600"></svg>
   </div>
 
-  <svg style="margin-left: 25%; margin-top: 15%;" width="519" height="600"></svg>
+
 
   <script src="./script.js"></script>
 </body>

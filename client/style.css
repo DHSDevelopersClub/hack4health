@@ -7,6 +7,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
+  overflow-y: hidden;
 }
 
 path {
@@ -19,10 +20,44 @@ path:hover, path.highlighted {
   fill: #999;
 }
 
+#content {
+  display: flex;
+  flex-direction: row;
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  max-width: 20vw;
+  background: #FFF;
+  padding: 16px;
+  height: 100vh;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.selector {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0 8px 0;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  background: #fff;
+  border-radius: 3px;
+  min-height: 2vh;
+}
+
+.selector:hover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
 a {
   text-decoration: none;
   color: white;
   margin: 0 8px 0 8px;
+  transition: color .1s linear;
+}
+
+a:hover {
+  color: #CFD8DC;
 }
 
 .container-fluid {
@@ -38,4 +73,12 @@ a {
   padding-left: 16px;
   color: #FFF;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  font-size: 1.5em;
+}
+
+.tooltip {
+  background: #673AB7;
+  border-radius: 3px;
+  color: #FFF;
+  padding: 6px;
 }

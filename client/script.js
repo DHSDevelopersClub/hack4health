@@ -29,7 +29,7 @@ var draw = function (datasetName) {
     tip = d3.tip()
         .attr('class', 'd3-tip')
         .html(function (d) {
-            return ("<h1 class=\"w3-panel w3-blue\"> Rate: " + d.rate + "</h1>")
+            return ("<h1 class=\"tooltip\"> Rate: " + d.rate + "</h1>")
         });
 
     /* Invoke the tip in the context of your visualization */
