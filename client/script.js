@@ -1,3 +1,9 @@
+/*
+Copyright me 
+2017
+*/
+
+
 var form = document.getElementById('dataSelector');
 form.addEventListener('change', changeDataset);
 
@@ -77,7 +83,7 @@ var draw = function (datasetName) {
         console.log(Object.values(datasets[datasetName]).map(Number).sort());
 
         var color = d3.scaleLinear()
-            .domain([24, 100])
+            .domain([0, d3.max(Object.values(datasets[datasetName]))/9])
             .range(d3.schemeBlues[9]);
 
         //Create a path for each map feature in the data
