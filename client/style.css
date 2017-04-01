@@ -33,6 +33,7 @@ path:hover, path.highlighted {
   padding: 16px;
   height: 100vh;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all .2s ease-in-out;
 }
 
 .selector {
@@ -81,4 +82,9 @@ a:hover {
   border-radius: 3px;
   color: #FFF;
   padding: 6px;
+}
+
+#nav-button {
+  width: 2vw;
+  height: 2vw;
 }
