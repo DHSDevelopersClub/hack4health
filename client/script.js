@@ -35,11 +35,29 @@ var draw = function (datasetName) {
     tip = d3.tip()
         .attr('class', 'd3-tip')
         .html(function (d) {
-            let minutes = d.rate / 60;
-            let seconds = minutes - 1;
-            seconds = seconds * 60;
-            minutes = Math.round(minutes);
-            return (`<h1 class="tooltip"> Time: ${minutes}:${seconds}</h1>`)
+            let zip = d.properties.zip_code_geo;
+            let num = d.rate;
+            let label;
+            let data;
+            function str_pad_left(string,pad,length) {
+                return (new Array(length+1).join(pad)+string).slice(-length);
+            }
+            if (datasetName == "responseTime" || datasetName == "dispachTime") {
+              label = "Time";
+              let minutes = Math.floor(num / 60);
+              minutes.toString();
+              let seconds = num - minutes * 60;
+              seconds.toString();
+              data = `${str_pad_left(minutes,'0',2)}:${str_pad_left(seconds,'0',2)}`;
+            } else {
+              label = "Percent";
+              num = Math.trunc(num * 100) / 100;
+              data = `${num}%`;
+            }
+
+
+
+            return (`<h1 class="tooltip">${label}: ${data} | ${zip}</h1>`);
         });
 
     /* Invoke the tip in the context of your visualization */
