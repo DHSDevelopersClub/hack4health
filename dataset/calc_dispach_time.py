@@ -34,4 +34,4 @@ def resonable(time):
         return False
     return True
 
-calc_delta_time("Time Call was Recieved", "Time Arrived on Scene", "./arrived.tsv")
+calc_delta_time("Time Call Was Received", "Time Arrived on Scene", "./arrived.tsv")
