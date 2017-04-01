@@ -66,8 +66,18 @@ var draw = function (datasetName) {
         if (error) console.log(error); //unknown error, check the console
 
         // Generate colors
+        var formattedValues = [];
+        
+        Object.values(datasets[datasetName]).forEach(function (v){
+            if(v != 0){
+                formattedValues.push(v);
+            }
+        })
+
+        console.log(Object.values(datasets[datasetName]).map(Number).sort());
+
         var color = d3.scaleLinear()
-            .domain([d3.min(Object.values(datasets[datasetName])), d3.max(Object.values(datasets[datasetName]))-300])
+            .domain([24, 100])
             .range(d3.schemeBlues[9]);
 
         //Create a path for each map feature in the data
@@ -84,6 +94,11 @@ var draw = function (datasetName) {
             .on('mouseout', tip.hide)
 
     }
+    //Update map on zoom/pan
+    function zoomed() {
+        // console.log(d3.event.transform);
+        svg.attr("transform", d3.event.transform);
+    }
 
 }
 
@@ -97,13 +112,6 @@ function changeDataset(e) {
 function clicked(d, i) {
     console.log(d);
     console.log(i);
-}
-
-
-//Update map on zoom/pan
-function zoomed() {
-    // console.log(d3.event.transform);
-    svg.attr("transform", d3.event.transform);
 }
 
 draw("dispachTime");
