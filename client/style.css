@@ -1,0 +1,14 @@
+path {
+  stroke-width: 1px;
+  stroke: white;
+  cursor: pointer;
+}
+
+path:hover, path.highlighted {
+  fill: #999;
+}
+
+.container-fluid {
+   padding: 0px !important
+}
+
