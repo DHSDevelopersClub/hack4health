@@ -9,13 +9,13 @@ form.addEventListener('change', changeDataset);
 
 var draw = function (datasetName) {
     //Map dimensions (in pixels)
-    var width = 519,
-        height = 600;
+    var width = 719,
+        height = 800;
 
     //Map projection
     var projection = d3.geoMercator()
-        .scale(46567.862117552664)
-        .center([-122.72168747117493, 38.09163738233181]) //projection center
+        .scale(65000)
+        .center([-122.74168747117493, 38.09263738233181]) //projection center
         .translate([width / 2, height / 2]) //translate to center the map in view
 
     //Generate paths based on projection
@@ -86,6 +86,7 @@ var draw = function (datasetName) {
         if (error) console.log(error); //unknown error, check the console
 
         // Generate colors
+
         var formattedValues = [];
 
         Object.values(datasets[datasetName]).forEach(function (v){
@@ -95,6 +96,7 @@ var draw = function (datasetName) {
         })
 
         console.log(Object.values(datasets[datasetName]).map(Number).sort());
+
 
         var color = d3.scaleLinear()
             .domain([0, d3.max(Object.values(datasets[datasetName]))/9])
