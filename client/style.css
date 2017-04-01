@@ -1,3 +1,14 @@
+
+:root {
+  --app-primary-color: #2196F3;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
 path {
   stroke-width: 1px;
   stroke: white;
@@ -8,7 +19,23 @@ path:hover, path.highlighted {
   fill: #999;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+  margin: 0 8px 0 8px;
+}
+
 .container-fluid {
    padding: 0px !important
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 8vh;
+  background: var(--app-primary-color);
+  padding-left: 16px;
+  color: #FFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
