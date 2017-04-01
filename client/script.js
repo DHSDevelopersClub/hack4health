@@ -31,16 +31,6 @@ var draw = function (datasetName) {
     var features = svg.append("g")
         .attr("class", "features");
 
-    var aa = [-122.564028, 38.001146];
-    var bb = [-122.645678, 37.969131];
-    svg.selectAll("circle")
-  		.data([aa,bb]).enter()
-  		.append("circle")
-  		.attr("cx", function (d) { console.log(projection(d)); return projection(d)[0]; })
-  		.attr("cy", function (d) { return projection(d)[1]; })
-  		.attr("r", "3px")
-  		.attr("fill", "red")
-
     /* Initialize tooltip */
     tip = d3.tip()
         .attr('class', 'd3-tip')
@@ -54,6 +44,8 @@ var draw = function (datasetName) {
 
     /* Invoke the tip in the context of your visualization */
     svg.call(tip);
+
+    var stations = [];
 
     //Create zoom/pan listener
     //Change [1,Infinity] to adjust the min/max zoom scale
@@ -77,6 +69,10 @@ var draw = function (datasetName) {
         })
         .defer(d3.tsv, "percent_hospitalized.tsv", function (d) {
             datasets['hospitalized'][d.zip_code] = d.value;
+        })
+        .defer(d3.tsv, "fire_stations.tsv", function (d) {
+          console.log([d[0],d[1]]);
+          stations.push([d[0],d[1]]);
         })
         .await(ready);
 
@@ -114,6 +110,17 @@ var draw = function (datasetName) {
             .on("click", clicked)
             .on('mouseover', tip.show)
             .on('mouseout', tip.hide)
+
+        console.log(stations);
+        var aa = [-122.564028, 38.001146];
+        var bb = [-122.645678, 37.969131];
+        features.selectAll("circle")
+      		.data(stations).enter()
+      		.append("circle")
+      		.attr("cx", function (d) { console.log(projection(d)); return projection(d)[0]; })
+      		.attr("cy", function (d) { return projection(d)[1]; })
+      		.attr("r", "3px")
+      		.attr("fill", "red")
 
     }
     //Update map on zoom/pan
