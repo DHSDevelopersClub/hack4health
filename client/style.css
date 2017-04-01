@@ -88,6 +88,7 @@ a:hover {
 #nav-button {
   width: 32px;
   height: 32px;
+  margin-bottom: 0;
 }
 
 #map {
