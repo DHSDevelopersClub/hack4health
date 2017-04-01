@@ -67,7 +67,7 @@ var draw = function (datasetName) {
 
         // Generate colors
         var color = d3.scaleLinear()
-            .domain(Object.values(datasets[datasetName]))
+            .domain([d3.min(Object.values(datasets[datasetName])), d3.max(Object.values(datasets[datasetName]))-300])
             .range(d3.schemeBlues[9]);
 
         //Create a path for each map feature in the data
