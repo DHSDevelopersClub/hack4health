@@ -107,10 +107,6 @@ var draw = function (datasetName) {
                 formattedValues.push(v);
             }
         })
-
-        console.log(Object.values(datasets[datasetName]).map(Number).sort());
-
-
         var color = d3.scaleLinear()
             .domain([0, d3.max(Object.values(datasets[datasetName]))/9])
             .range(d3.schemeBlues[9]);
@@ -136,13 +132,12 @@ var draw = function (datasetName) {
       		.attr("cx", function (d) { return projection(d)[0]; })
       		.attr("cy", function (d) { return projection(d)[1]; })
       		.attr("r", "3px")
-      		.attr("fill", "red")
+      		.attr("fill", "#FF5722")
 
     }
     //Update map on zoom/pan
     function zoomed() {
-        // console.log(d3.event.transform);
-        svg.attr("transform", d3.event.transform);
+        // svg.attr("transform", d3.event.transform);
     }
 
 }
@@ -155,8 +150,7 @@ function changeDataset(e) {
 // Add optional onClick events for features here
 // d.properties contains the attributes (e.g. d.properties.name, d.properties.population)
 function clicked(d, i) {
-    console.log(d);
-    console.log(i);
+
 }
 
 draw("dispachTime");
