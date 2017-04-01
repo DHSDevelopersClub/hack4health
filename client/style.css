@@ -91,6 +91,5 @@ a:hover {
 }
 
 #map {
-  width: 80vw;
-  height: 100vh;
+  padding: 2.5vh 0 0 2.5vw;
 }
