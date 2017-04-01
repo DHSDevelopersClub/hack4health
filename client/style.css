@@ -89,6 +89,7 @@ a:hover {
   width: 32px;
   height: 32px;
   margin-bottom: 0;
+  cursor: pointer;
 }
 
 #map {

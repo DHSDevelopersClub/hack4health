@@ -12,7 +12,7 @@
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js" integrity="sha384-Vy3MfZmjTg/GcpizhcEx559fjD9gffKNAtynCiyNez6ReeUbFto+LiajdfeFjnKa"
     crossorigin="anonymous"></script>
 
-    <script src="./node_modules/d3-tip/index.js"></script>
+  <script src="./node_modules/d3-tip/index.js"></script>
 
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" media="all" disabled="false">
@@ -24,9 +24,11 @@
   <div class="nav">
     <img src="/res/side-nav.svg" alt="Nav" id="nav-button">
     <a href="/" class="item">Home</a>
-    <a href="https://data.marincounty.org/" class="item" target="_blank">Dataset</a>
-    <a href="https://github.com/DHSDevelopersClub/hack4health" class="item" target="_blank">Source Code</a>
-    <a href="http://dhsdevelopers.org" class="item" target="_blank">Developers Club</a>
+    <div id="exlinks">
+      <a href="https://data.marincounty.org/" class="item" target="_blank">Dataset</a>
+      <a href="https://github.com/DHSDevelopersClub/hack4health" class="item" target="_blank">Source Code</a>
+      <a href="http://dhsdevelopers.org" class="item" target="_blank">Developers Club</a>
+    </div>
   </div>
 
   <div id="content">
@@ -44,9 +46,14 @@
           <input type="radio" id="hospitalized" name="dataset" value="hospitalized">
           <label for="hospitalized">Percent Hospitalized</label>
         </div>
+
         <h4>Key:</h4>
-        <span><div class="dot"></div>EMS Location<span>
-        <span>Darker Color = Higher value</span>
+        <div class="legendpart">
+          <span><div class="dotr"></div>EMS Location</span>
+        </div>
+        <div class="legendpart">
+          <span><div class="dotb"></div>Darker Color = Higher Value</span>
+        </div>
       </form>
 
     </div>
