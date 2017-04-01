@@ -124,15 +124,13 @@ var draw = function (datasetName) {
             .on('mouseover', tip.show)
             .on('mouseout', tip.hide)
 
-        var aa = [-122.564028, 38.001146];
-        var bb = [-122.645678, 37.969131];
         features.selectAll("circle")
       		.data(stations).enter()
       		.append("circle")
       		.attr("cx", function (d) { return projection(d)[0]; })
       		.attr("cy", function (d) { return projection(d)[1]; })
       		.attr("r", "3px")
-      		.attr("fill", "#FF5722")
+      		.attr("fill", "#E91E63")
 
     }
     //Update map on zoom/pan
