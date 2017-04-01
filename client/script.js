@@ -31,6 +31,16 @@ var draw = function (datasetName) {
     var features = svg.append("g")
         .attr("class", "features");
 
+    var aa = [-122.564028, 38.001146];
+    var bb = [-122.645678, 37.969131];
+    svg.selectAll("circle")
+  		.data([aa,bb]).enter()
+  		.append("circle")
+  		.attr("cx", function (d) { console.log(projection(d)); return projection(d)[0]; })
+  		.attr("cy", function (d) { return projection(d)[1]; })
+  		.attr("r", "3px")
+  		.attr("fill", "red")
+
     /* Initialize tooltip */
     tip = d3.tip()
         .attr('class', 'd3-tip')
